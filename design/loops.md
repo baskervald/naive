@@ -10,7 +10,6 @@ Turn all types of loops into do...while loops
 for <init>;<term>;<action> do
   <loop>
 done
-<deinit>
 ```
 
 to
@@ -21,6 +20,7 @@ do
   <loop>
   <action>
 while <term>
+<cleanup>
 ```
 
 to
@@ -30,6 +30,7 @@ to
 1 <loop>
 2 <action>
 3 if <term> goto 1
+4 <cleanup>
 ```
 
 ---
@@ -50,6 +51,8 @@ do
   <var>=<grouping>[pos]
   <loop>
 while not pos++ == len
+<cleanup>
+
 ```
 
 to
@@ -60,6 +63,7 @@ to
 2 <var>=<grouping>[pos]
 3 <loop>
 4 if not pos++ == len goto 2
+5 <cleanup>
 ```
 
 ---
